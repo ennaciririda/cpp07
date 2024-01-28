@@ -1,5 +1,5 @@
 FLAGS 			= -Wall -Wextra -Werror -std=c++98
-NAME 			= ex01
+NAME 			= ex02
 CC				= c++
 RM				= rm -fr
 FILES			= main.cpp

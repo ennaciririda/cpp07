@@ -3,17 +3,17 @@
 
 #include <iostream>
 
-#endif
-
 template <typename T>
-void function_ptr(T a)
+void function(T &a)
 {
 	std::cout << a << std::endl;
 }
 
 template <typename T>
-void iter(T *array, size_t lenght, void *function_ptr)
+void iter(T *array, size_t lenght, void (*function_ptr)(T&))
 {
 	for (size_t i = 0; i < lenght ; i++)
 		function_ptr(array[i]);
 }
+#endif
+
