@@ -15,12 +15,6 @@ public:
 
 int main()
 {
-	MyContainer<int> intContainer(42.4);
-	MyContainer<double> doubleContainer(3.14);
-
-	int intValue = intContainer.getValue();
-	double doubleValue = doubleContainer.getValue();
-	std::cout << intValue << "  **  " << doubleValue;
 }
 
 

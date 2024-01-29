@@ -10,7 +10,7 @@ all: $(NAME)
 $(NAME): $(OBJECT_FILES)
 	$(CC) $(FLAGS)  $(OBJECT_FILES) -o $(NAME)
 
-%.o:%.cpp iter.hpp
+%.o:%.cpp Array.hpp
 	$(CC) $(FLAGS) -c $< -o $@
 clean:
 	@$(RM) $(OBJECT_FILES)
