@@ -11,10 +11,11 @@ class Array
 	public:
 	Array() : num_elements(0)
 	{
+		array  = new T[0];
 	}
-	Array(unsigned int n)
+	Array(unsigned int n) : num_elements(n)
 	{
-		array = new T(n);
+		array = new T[n];
 	}
 	Array(const Array &obj)
 	{
@@ -28,22 +29,24 @@ class Array
 		{
 			array[i] = obj.array[i];
 		}
+		return *this;
 	}
-	T& operator[](int n)
+	T& operator[](unsigned int n)
 	{
-		// std::cout << "heeeere\n";
-		// std::cout << num_elements;
-		if (n < 0 || n >= anum_elements)
-			std::cout << "heeeere233\n";
-			// throw Except();
+		if (n >= num_elements)
+			throw Except();
 		return this->array[n];
+	}
+	unsigned int size()
+	{
+		return this->num_elements;
 	}
 	~Array()
 	{
 		delete []array;
 	}
 
-	class Except : std::exception
+	class Except : public std::exception
 	{
 		public :
 			const char* what() const throw()

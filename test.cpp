@@ -1,20 +1,18 @@
 #include <iostream>
 
-template <typename T>
-class MyContainer {
-private:
-	T value;
+template <typename T, typename F>
+void func(T& a, F& b, F& c)
+{
+	std::cout << a << std::endl;
+	std::cout << b;
 
-public:
-	MyContainer(T val) : value(val) {}
-
-	T getValue() const {
-		return value;
-	}
-};
+}
 
 int main()
 {
+	int a = 3;
+	float b = 12;
+	func(a , b, b);
 }
 
 
